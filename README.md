@@ -19,17 +19,24 @@ Flow:
 /accounts/v1/
 Account Endpoints:
 - POST : create a new account
-- POST : sign into an account
+- POST : sign into an account (/login)
+
+/accounts/v1/{id}
 - PUT : update account information
 - GET : account information
 - DELETE  : delete account
 
 /groupomania-feed/v1/
 Information Endpoints:
+
 - GET : display all employee posts
 - GET : dynamic display of all posts  ? 
-- POST : create a new text post
-- POST : create a new multimedia post with text
+
+Pass user-id through payload
+/groupomania-feed/v1/new-post
+- POST : create a new post
+
+/groupomania-feed/v1/{post-id}
 - PUT :  update post (text or multimedia) ( needed ? )
 - DELETE : remove a post 
 
