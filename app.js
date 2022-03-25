@@ -1,5 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const accountRouter = require("./routes/accountRoutes");
+const path = require("path");
 
 const app = express();
 
@@ -17,4 +19,6 @@ app.use("", (_req, res, next) => {
 });
 
 app.use(bodyParser.json());
+app.use("/groupomania/accounts", accountRouter);
+
 module.exports = app;
