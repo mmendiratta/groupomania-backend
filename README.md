@@ -41,6 +41,7 @@ Pass user-id through payload
 - DELETE : remove a post 
 
 SQL ERD:
+
 <img width="276" alt="Screen Shot 2022-03-24 at 7 44 16 PM" src="https://user-images.githubusercontent.com/40476522/160032909-6d2ba477-a943-40ba-9214-072eb47f0bf5.png">
 
 https://mermaid.live/edit#pako:eNptktFugzAMRX_F8nPXD-C5VJoqbdXY3pAmixgajRDkBG0T8O_LKB3QJXmxco-le-30WFjFmCDLQVMlZPIG_s5blr7AMOz3Qw9wTNPDw_k5e4UECmHy7NbsUi_V1N-vKQDnRTcVdI7lUcH5tFFnkQ3pOiZcyF1Yvbfk3KcVFUNKLc4_keGYWNO9NubN9d4elphx4611_r_xu1jHE-RYijUTfh2XlRyjPV77muMKf3nYKqWuGbShapthjeAODUsYoQp7nULk6C8cUmMSSkXy8etkDFzXqrDHVOngDpOSasc7pM7b7LspMPHS8Q2av8dMjT9cW6E-
