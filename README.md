@@ -42,6 +42,33 @@ Pass user-id through payload
 
 SQL ERD:
 
+```mermaid
+erDiagram
+    FEED }|..|| ACCOUNT: viewed
+    FEED }|..|| POST: created
+        
+    ACCOUNT {
+        string userId PK
+        string email
+        string hashed_password
+        string firstName
+        string lastName
+    }
+
+    FEED {
+        string feedId PK
+        string userId FK
+        string postId FK
+    }
+
+    POST {
+        string postId PK
+        string title
+        string text 
+        file image
+    }
+```
+
 ![Screen Shot 2022-03-25 at 1 27 09 PM](https://user-images.githubusercontent.com/40476522/160180060-32b9cf73-283d-4700-b16d-e19fd712b64d.png)
 
 
