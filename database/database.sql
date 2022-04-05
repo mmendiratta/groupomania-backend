@@ -13,7 +13,6 @@ CREATE TABLE post (
 );
 
 CREATE TABLE feed (
-    feed_id  VARCHAR(16) NOT NULL CONSTRAINT feed_id_unique UNIQUE PRIMARY KEY,
     FOREIGN KEY (email) REFERENCES account (email),
     FOREIGN KEY (post_id) REFERENCES post (post_id),
 )
