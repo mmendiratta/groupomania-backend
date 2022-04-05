@@ -47,7 +47,7 @@ SQL ERD:
 
 https://mermaid.live/edit#pako:eNp1kttqwzAMQH9F6Ln0A_I22hTGoC20ewsMESuNWW7IyrrR5N_nlWxNMsdPMufYutg3TGvDGCHL1tJFqEwq-FvjeBfHW-i79brr4GmzObzuzxF8WL6yWdKOh5N3UmHSsfSIhnvgNr4BwKnY6gKtY3k2cHyZ0AFySbYIgZxczuatIeeutZiQkllxuqeSQ7CgOeuT6rG59xeuN2M2_-uddbML06Z2OqOTtD-jXEg7HF1Iq1YLDhP-VJiSzBYMtqTLtPuxgissWfzwjf8094IS1Jz9vDDyoSF5TzCpeu-1jfEPHxurtWCUUeF4hdRqffqqUoxUWv6Vhr83WP03j362-g
 
-
+`
 CREATE TABLE account (
     email VARCHAR(40) PRIMARY KEY,
     hashed_password CHAR(60) NOT NULL,
@@ -67,4 +67,5 @@ CREATE TABLE feed (
     FOREIGN KEY (email) REFERENCES account (email),
     FOREIGN KEY (post_id) REFERENCES post (post_id),
 )
+`
 
