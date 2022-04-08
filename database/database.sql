@@ -18,5 +18,4 @@ CREATE TABLE account_feed_posts (
     PRIMARY KEY (account_id, post_id),
     FOREIGN KEY (account_id) REFERENCES account (id),
     FOREIGN KEY (post_id) REFERENCES post (id),
-   
-)
+);
