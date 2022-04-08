@@ -13,7 +13,7 @@ CREATE TABLE post (
 
 CREATE TABLE account_feed_posts (
     account_id INT NOT NULL,
-    role_id INT NOT NULL,
+    post_id INT NOT NULL,
     viewed_date TIMESTAMP,
     PRIMARY KEY (account_id, post_id),
     FOREIGN KEY (account_id) REFERENCES account (id),
