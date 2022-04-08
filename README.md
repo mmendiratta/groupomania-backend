@@ -41,58 +41,7 @@ Pass user-id through payload
 - DELETE : remove a post 
 
 SQL ERD:
+<img width="408" alt="Screen Shot 2022-04-07 at 9 00 11 PM" src="https://user-images.githubusercontent.com/40476522/162348392-5118aec2-e2f4-425d-88e2-f7e788a8c8b0.png">
 
-```mermaid
-erDiagram
-    FEED }|..|| ACCOUNT: viewed
-    FEED }|..|| POST: created
-        
-    ACCOUNT {
-        string userId PK
-        string email
-        string hashed_password
-        string firstName
-        string lastName
-    }
-
-    FEED {
-        string feedId PK
-        string userId FK
-        string postId FK
-    }
-
-    POST {
-        string postId PK
-        string title
-        string text 
-        file image
-    }
-```
-
-![Screen Shot 2022-03-25 at 1 27 09 PM](https://user-images.githubusercontent.com/40476522/160180060-32b9cf73-283d-4700-b16d-e19fd712b64d.png)
-
-
-https://mermaid.live/edit#pako:eNp1kttqwzAMQH9F6Ln0A_I22hTGoC20ewsMESuNWW7IyrrR5N_nlWxNMsdPMufYutg3TGvDGCHL1tJFqEwq-FvjeBfHW-i79brr4GmzObzuzxF8WL6yWdKOh5N3UmHSsfSIhnvgNr4BwKnY6gKtY3k2cHyZ0AFySbYIgZxczuatIeeutZiQkllxuqeSQ7CgOeuT6rG59xeuN2M2_-uddbML06Z2OqOTtD-jXEg7HF1Iq1YLDhP-VJiSzBYMtqTLtPuxgissWfzwjf8094IS1Jz9vDDyoSF5TzCpeu-1jfEPHxurtWCUUeF4hdRqffqqUoxUWv6Vhr83WP03j362-g
-
-`
-CREATE TABLE account (
-    email VARCHAR(40) PRIMARY KEY,
-    hashed_password CHAR(60) NOT NULL,
-    first_name CHAR(20) NOT NULL,
-    last_name CHAR(20) NOT NULL
-);
-
-CREATE TABLE post (
-    post_id VARCHAR(16) NOT NULL CONSTRAINT post_id_unique UNIQUE PRIMARY KEY,
-    FOREIGN KEY (email) REFERENCES account (email),
-    title VARCHAR(20) NOT NULL,
-    text_body VARCHAR(1024) NOT NULL
-);
-
-CREATE TABLE feed (
-    feed_id  VARCHAR(16) NOT NULL CONSTRAINT feed_id_unique UNIQUE PRIMARY KEY,
-    FOREIGN KEY (email) REFERENCES account (email),
-    FOREIGN KEY (post_id) REFERENCES post (post_id),
-)
-`
+https://mermaid.live/edit#pako:eNqNk0FugzAQRa9ieR3lAOyqBDaVmkhJdkhohAewim1kD02rwN1rGkihQFtWg97_o_ke-8ZTI5AHHO1eQm5BxZo9vnH9tNsdLi_nJArDfXI8nM4n1jbbbdMMJGCQpqbWlFTGUfIm8Yrifx26nx_21CLQ2P9d9X3YbdycMUdW6vzRRQp2fJ4oegEqkOUSKMAVKJIKnLsaK5YkmbR-Ng0Kl2gJM9jGejb4-AD-ynA_jHkWJjWNo0YLeLBGv1pXfVNAUqEjUBW7LzYRfj0rObtoK8nW4vSYJJW4TPCd2JRkskQmFeTTOcYSvuEKrV-48Ff8a6KYU4F-QzzwpQD7GvNYt15XV12iUEgylgcZlA43HGoypw-d8oBsjYOofym9qv0EnTHwIw
 
