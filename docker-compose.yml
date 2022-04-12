@@ -3,6 +3,7 @@ services:
   db:
     image: postgres:13
     restart: always
+    user:  postgres
     ports:
       - 5432:5432
     environment:
@@ -10,6 +11,9 @@ services:
       - POSTGRES_PASSWORD=password
       - POSTGRES_DB=groupomaniaDB
     volumes:
+      - ./database/databaseSetup.sql:/docker-entrypoint-initdb.d/1-databaseSetup.sql  # For creating the tables.
+      - ./database/mockData.sql:/docker-entrypoint-initdb.d/2-mockData.sql  # For mock data.
       - ./postgres-data:/var/lib/postgresql/data
-      - ${PWD}/database/database.sql:/docker-entrypoint-initdb.d/a_database.sql  # For creating the tables.
-      #- ${PWD}/database/mock_data.sql:/docker-entrypoint-initdb.d/mock_data.sql # For mock data.
+
+volumes:
+  postgres-data:

@@ -1,4 +1,4 @@
-CREATE TABLE account (
+CREATE TABLE accounts (
     email VARCHAR(40) UNIQUE NOT NULL,
     hashed_password CHAR(60) NOT NULL,
     first_name CHAR(20) NOT NULL,

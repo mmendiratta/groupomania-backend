@@ -1,12 +1,11 @@
 const express = require("express");
 
-const accountController = require("../controllers/accountController")
+const accountQueries = require("../queries/queries");
 const router = express.Router();
 
-router.post(); // create new account
-router.post(); // sign in to account
-router.put(); // update account
-router.get(); // get account info
-router.delete(); // delete account 
+router.post("/create", accountQueries.createNewAccount); // create new account
+// router.post("/login", accountQueries.); // sign in to account
+router.get("/", accountQueries.getAllAccounts); // get account info
+router.delete("/", accountQueries.deleteAccount); // delete account
 
 module.exports = router;
