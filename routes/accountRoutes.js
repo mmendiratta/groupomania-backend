@@ -7,5 +7,6 @@ router.post("/create", accountQueries.createNewAccount); // create new account
 // router.post("/login", accountQueries.); // sign in to account
 router.get("/", accountQueries.getAllAccounts); // get account info
 router.delete("/", accountQueries.deleteAccount); // delete account
+router.get("/", accountQueries.getAllAccounts); // get account info
 
 module.exports = router;

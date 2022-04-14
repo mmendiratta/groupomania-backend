@@ -5,7 +5,7 @@ const pool = new Pool({
   host: "localhost",
   database: "groupomaniaDB",
   password: "password",
-  port: 5432
+  port: 5438
 });
 
 const getAllAccounts = (_req, res) => {
