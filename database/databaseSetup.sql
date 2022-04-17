@@ -1,15 +1,15 @@
 CREATE TABLE accounts (
     id SERIAL PRIMARY KEY,
-    email VARCHAR(40) UNIQUE NOT NULL,
-    hashed_password CHAR(60) NOT NULL,
-    first_name CHAR(20) NOT NULL,
-    last_name CHAR(20) NOT NULL
+    email TEXT UNIQUE NOT NULL,
+    hashed_password TEXT NOT NULL,
+    first_name TEXT NOT NULL,
+    last_name TEXT NOT NULL
 );
 
 CREATE TABLE posts (
     id SERIAL PRIMARY KEY,
     FOREIGN KEY (id) REFERENCES accounts (id),
-    title VARCHAR(20) NOT NULL,
+    title TEXT NOT NULL,
     text_body VARCHAR(1024) NOT NULL
 );
 

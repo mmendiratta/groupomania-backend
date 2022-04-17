@@ -1,4 +1,6 @@
 const Pool = require("pg").Pool;
+const bcrypt = require("bcrypt");
+// const jwt = require("jsonwebtoken");
 
 const pool = new Pool({
   user: "postgres",
@@ -20,7 +22,7 @@ const getAllAccounts = (_req, res) => {
 const getAccountById = (req, res) => {
   const id = parseInt(req.params.id);
 
-  pool.query("SELECT * FROM users WHERE id = $1", [id], (error, results) => {
+  pool.query("SELECT * FROM accounts WHERE id = $1", [id], (error, results) => {
     if (error) {
       return res.status(500).json({ error: error });
     }
@@ -30,17 +32,16 @@ const getAccountById = (req, res) => {
 
 const createNewAccount = (req, res) => {
   const { firstName, lastName, email, password } = req.body;
-
-  // need to hash password here
+  const hashedPassword = bcrypt.hash(password, 10);
 
   pool.query(
-    "INSERT INTO accounts (firstName, lastName, email, password) VALUES ($1, $2, $3, $4)",
-    [firstName, lastName, email, password],
+    "INSERT INTO accounts (first_name, last_name, email, hashed_password) VALUES ($1, $2, $3, $4)",
+    [firstName, lastName, email, hashedPassword],
     (error, results) => {
       if (error) {
         return res.status(500).json({ error: error });
       }
-      res.status(201).send(`Account created with ID: ${results.insertId}`);
+      res.status(201).send("Account created");
     }
   );
 };
@@ -48,7 +49,7 @@ const createNewAccount = (req, res) => {
 const deleteAccount = (req, res) => {
   const id = parseInt(req.params.id);
 
-  pool.query("DELETE FROM users WHERE id = $1", [id], (error) => {
+  pool.query("DELETE FROM accounts WHERE id = $1", [id], (error) => {
     if (error) {
       return res.status(500).json({ error: error });
     }

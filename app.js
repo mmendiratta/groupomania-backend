@@ -19,6 +19,6 @@ app.use("", (_req, res, next) => {
 });
 
 app.use(bodyParser.json());
-app.use("/groupomania/accounts", accountRouter);
+app.use("/groupomania/accounts/v1", accountRouter);
 
 module.exports = app;
