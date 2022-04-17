@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const accountRouter = require("./routes/accountRoutes");
+const feedRouter = require("./routes/feedPostRoutes");
 // const path = require("path");
 
 const app = express();
@@ -19,6 +20,7 @@ app.use("", (_req, res, next) => {
 });
 
 app.use(bodyParser.json());
-app.use("/groupomania/accounts", accountRouter);
+app.use("/groupomania/accounts/v1", accountRouter);
+app.use("/groupomania-feed/v1/", feedRouter);
 
 module.exports = app;

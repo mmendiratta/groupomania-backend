@@ -26,3 +26,10 @@ INSERT INTO accounts (email, hashed_password, first_name, last_name) VALUES (
     'Kal',
     'L'
 );
+
+-- post mocks
+INSERT INTO posts (account_id, title, text_body) VALUES (
+    1,
+    'Test 1',
+    'post body'
+);
