@@ -10,8 +10,8 @@ CREATE TABLE posts (
     id SERIAL PRIMARY KEY,
     account_id integer REFERENCES accounts (id),
     title TEXT NOT NULL,
-    text_body VARCHAR(1024) NOT NULL
-    --image_id TEXT
+    text_body VARCHAR(1024) NOT NULL,
+    image_id TEXT DEFAULT null
 );
 
 CREATE TABLE account_feed_posts (
@@ -20,5 +20,5 @@ CREATE TABLE account_feed_posts (
     PRIMARY KEY (account_id, post_id),
     CONSTRAINT fk_account FOREIGN KEY (account_id) REFERENCES accounts (id),
     CONSTRAINT fk_post FOREIGN KEY(post_id) REFERENCES posts (id),
-    viewed_date TIMESTAMP DEFAULT null
+    viewed_date TIMESTAMP
 );

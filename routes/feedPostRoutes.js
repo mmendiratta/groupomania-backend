@@ -1,10 +1,10 @@
 const express = require("express");
 const feedPostQueries = require("../queries/feedPostQueries");
 const router = express.Router();
-// const auth = require("../middleware/auth");
+const auth = require("../middleware/auth");
 
-// TODO: add auth
-router.get("/", feedPostQueries.getAllFeedPosts);
-router.post("/", feedPostQueries.createNewPost);
-router.delete("/", feedPostQueries.deletePost);
+router.get("/", auth, feedPostQueries.getAllFeedPosts);
+router.post("/", auth, feedPostQueries.createNewPost);
+router.delete("/", auth, feedPostQueries.deletePost);
+router.post("/view", auth, feedPostQueries.addToLinkTable);
 module.exports = router;

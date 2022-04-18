@@ -2,7 +2,6 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const accountRouter = require("./routes/accountRoutes");
 const feedRouter = require("./routes/feedPostRoutes");
-// const path = require("path");
 
 const app = express();
 
