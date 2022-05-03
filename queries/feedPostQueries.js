@@ -40,7 +40,7 @@ const addToLinkTable = (req, res) => {
 
 const createNewPost = (req, res) => {
   const { accountId, title, textBody, imageId } = req.body;
-  pool.query("INSERT INTO posts (account_id, title, text_body, imageId) VALUES ($1, $2, $3, $4) RETURNING id", [accountId, title, textBody, imageId], (error, results) => {
+  pool.query("INSERT INTO posts (account_id, title, text_body, image_id) VALUES ($1, $2, $3, $4) RETURNING id", [accountId, title, textBody, imageId], (error, results) => {
     if (error) {
       return res.status(500).json({ error: error });
     }
