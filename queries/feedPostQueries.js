@@ -24,10 +24,10 @@ const getAllLinkedSeenPosts = (_req, res) => {
     }
     res.status(200).json(results.rows);
   });
-  res.status(201).send("Post viewed");
 };
 
 const addToLinkTable = (req, res) => {
+  console.log(req.body);
   const { accountId, postId } = req.body;
   const currentDateTime = new Date();
   pool.query("INSERT INTO account_feed_posts (account_id, post_id, viewed_date) VALUES ($1, $2, $3)", [accountId, postId, currentDateTime], (error) => {
@@ -44,7 +44,12 @@ const createNewPost = (req, res) => {
     if (error) {
       return res.status(500).json({ error: error });
     }
-
+    const currentDateTime = new Date();
+    pool.query("INSERT INTO account_feed_posts (account_id, post_id, viewed_date) VALUES ($1, $2, $3)", [accountId, results.rows[0].id, currentDateTime], (error) => {
+      if (error) {
+        return res.status(500).json({ error: error });
+      }
+    });
     res.status(201).send(`Post created with ID: ${results.rows[0].id}`);
   });
 };

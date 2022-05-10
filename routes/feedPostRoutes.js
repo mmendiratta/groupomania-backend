@@ -7,4 +7,6 @@ router.get("/", auth, feedPostQueries.getAllFeedPosts);
 router.post("/", auth, feedPostQueries.createNewPost);
 router.delete("/", auth, feedPostQueries.deletePost);
 router.post("/view", auth, feedPostQueries.addToLinkTable);
+router.get("/view", auth, feedPostQueries.getAllLinkedSeenPosts);
+
 module.exports = router;
