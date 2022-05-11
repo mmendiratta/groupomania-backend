@@ -1,7 +1,8 @@
 # groupomania-backend
 Backend Application for the Groupomania Employee Forum 
 
-Initial API Spec: 
+
+
 API Endpoints
 
 Flow: 
@@ -9,8 +10,6 @@ Flow:
 - Account sign in
 - Display information
 - Scroll through information
-- View account info
-- Edit account info
 - Delete account
 - Create multimedia post
 - Create text post
@@ -22,7 +21,6 @@ Account Endpoints:
 - POST : sign into an account (/login)
 
 /accounts/v1/{id}
-- PUT : update account information
 - GET : account information
 - DELETE  : delete account
 
@@ -35,10 +33,6 @@ Information Endpoints:
 Pass user-id through payload
 /groupomania-feed/v1/new-post
 - POST : create a new post
-
-/groupomania-feed/v1/{post-id}
-- PUT :  update post (text or multimedia) ( needed ? )
-- DELETE : remove a post 
 
 SQL ERD:
 <img width="408" alt="Screen Shot 2022-04-07 at 9 00 11 PM" src="https://user-images.githubusercontent.com/40476522/162348392-5118aec2-e2f4-425d-88e2-f7e788a8c8b0.png">
