@@ -2,7 +2,10 @@
 Backend Application for the Groupomania Employee Forum 
 
 Start application:
-`nodemon`
+- `nodemon` to start the backend server
+- `docker compose up` to startup the database
+- `docker compose down` to stop and teardown database
+
 
 API Endpoints
 
