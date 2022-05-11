@@ -1,7 +1,8 @@
 # groupomania-backend
 Backend Application for the Groupomania Employee Forum 
 
-
+Start application:
+`nodemon`
 
 API Endpoints
 
